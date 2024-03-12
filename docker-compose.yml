@@ -45,6 +45,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_DB=rinhadb
     volumes:
+      - ./docker/postgresql.conf:/etc/postgresql/postgresql.conf
       - ./src/main/resources/migration/script.sql:/docker-entrypoint-initdb.d/script.sql
     ports:
       - 5432:5432
